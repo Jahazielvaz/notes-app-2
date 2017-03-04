@@ -8,7 +8,8 @@
     return this._list
   }
 
-  NoteList.prototype.saveNote = function(note) {
+  NoteList.prototype.createNote = function(text) {
+    note = new Note(text)
     this._list.push(note)
   }
 

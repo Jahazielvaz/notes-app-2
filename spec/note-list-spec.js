@@ -6,9 +6,9 @@ function testNoteListCreation() {
 
 function testNoteListHasNote() {
   var list = new NoteList();
-  var note = new Note("hello!");
-  list.saveNote(note);
+  list.createNote("hello!");
   assert.isTrue( list.seeList().length === 1)
+  assert.isTrue( list.seeList()[0]._text === "hello!")
   console.log("testNoteListHasNote returned: " + list.seeList());
 };
 
