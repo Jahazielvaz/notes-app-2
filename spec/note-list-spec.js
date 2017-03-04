@@ -1,7 +1,7 @@
 function testNoteListCreation() {
   var noteList = new NoteList();
   assert.isTrue( noteList.seeList() instanceof Array )
-  console.log( "This test returned: " + noteList.seeList() )
+  console.log( "testNoteListCreation returned: " + noteList.seeList() )
 };
 
 function testNoteListHasNote() {
@@ -9,8 +9,9 @@ function testNoteListHasNote() {
   var note = new Note("hello!");
   list.saveNote(note);
   assert.isTrue( list.seeList().length === 1)
-  console.log("This returned: " + list.seeList());
+  console.log("testNoteListHasNote returned: " + list.seeList());
 };
 
 
 testNoteListCreation();
+testNoteListHasNote();
