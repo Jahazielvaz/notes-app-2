@@ -5,22 +5,14 @@ function testNoteControllerCreation() {
 };
 
 function testAddsNotesToDOM() {
-  function NoteListDouble() {
-    return ["This is a test note"];
-  };
-
-  var list = NoteListDouble();
-
-  function NoteListViewDouble(list) {
-    return "<ul><li><div>" + list + "</div></li></ul>"
-  };
-
-  NoteListViewDouble.prototype.conve
-
-  var controller = new NoteController(list)
-  controller.getHTML
-
-
+  var list = new NoteList();
+  list.createNote("test note 1");
+  var controller = new NoteController(list);
+  var app = document.getElementById('app');
+  controller.getHTML();
+  console.log( "testAddsNotesToDOM returned " + app.innerHTML )
+  assert.isTrue( app.innerHTML === "<ul><li><div>test note 1</div></li></ul>" )
 };
 
 testNoteControllerCreation();
+testAddsNotesToDOM();

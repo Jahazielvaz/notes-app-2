@@ -7,7 +7,6 @@
 
   NoteController.prototype.getHTML = function() {
     var swap = document.getElementById("app");
-    console.log(swap);
     swap.innerHTML = this.view.convertToHTML();
   };
 
