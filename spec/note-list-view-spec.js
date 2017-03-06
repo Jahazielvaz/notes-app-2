@@ -25,8 +25,9 @@ function testNoteListCreatesNoteLink() {
   var list = new NoteList();
   list.createNote( "note linked url" );
   list.assignNoteId();
-  assert.isTrue( list.createLink() === "<a href='#note/0'>Note #0</a>" );
-  console.log( "testNoteListCreatesNoteLink returned: " + list.createLink() );
+  var noteView = new NoteListView(list)
+  assert.isTrue( noteView.createLink() === "<a href='#note/0'>Note #0</a>" );
+  console.log( "testNoteListCreatesNoteLink returned: " + noteView.createLink() );
 };
 
 
