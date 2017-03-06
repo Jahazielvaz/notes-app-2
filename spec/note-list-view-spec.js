@@ -21,6 +21,17 @@ function testNoteShowsOnly20Chars() {
   console.log( "testNoteShowsOnly20Chars returned: " + noteView.convertToHTML() )
 };
 
+function testNoteListCreatesNoteLink() {
+  var list = new NoteList();
+  list.createNote("note linked url")
+  list.assignNoteId(); // get this id number and add it after hash of url
+  assert.isTrue( list.createLink() === "<a href="#note/0">Note #0</a>" )
+  console.log( "testNoteListCreatesNoteLink returned: " + list.createLink() )
+};
+
+
+
 testNoteListViewCreation();
 testNoteListConvertsListToHTML();
 testNoteShowsOnly20Chars();
+testNoteListLinksNoteToURL();

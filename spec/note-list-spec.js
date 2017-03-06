@@ -9,7 +9,7 @@ function testNoteListHasNote() {
   list.createNote("hello!");
   assert.isTrue( list.seeList().length === 1);
   assert.isTrue( list.seeList()[0]._text === "hello!");
-  console.log("testNoteListHasNote returned: " + list.seeList());
+  console.log( "testNoteListHasNote returned: " + list.seeList() );
 };
 
 function testNoteListAssignsNoteID() {
@@ -17,8 +17,7 @@ function testNoteListAssignsNoteID() {
   list.createNote("First note!");
   list.assignNoteId();
   assert.isTrue( list._list[0].id === 0 );
-  console.log("testNoteListAssignsNoteID returned " + list._list[0].id );
-
+  console.log( "testNoteListAssignsNoteID returned: " + list._list[0].id );
 };
 
 
