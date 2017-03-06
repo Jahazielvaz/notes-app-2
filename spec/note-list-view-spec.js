@@ -13,5 +13,14 @@ function testNoteListConvertsListToHTML() {
   console.log( "testNoteListConvertsToHTML returned: " + noteView.convertToHTML() )
 };
 
+function testNoteShowsOnly20Chars() {
+  var list = new NoteList();
+  list.createNote("hello! I am a veeeerrrry long note!");
+  var noteView = new NoteListView(list);
+  assert.isTrue( noteView.convertToHTML() === "<ul><li><div>hello! I am a veee...</div></li></ul>"  )
+  console.log( "testNoteShowsOnly20Chars returned: " + noteView.convertToHTML() )
+};
+
 testNoteListViewCreation();
 testNoteListConvertsListToHTML();
+testNoteShowsOnly20Chars();
