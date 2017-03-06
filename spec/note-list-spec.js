@@ -15,10 +15,10 @@ function testNoteListHasNote() {
 function testNoteListAssignsNoteID() {
   var list = new NoteList();
   list.createNote("First note!");
-  list.createNote("Second note!");
+  list.assignNoteId();
   assert.isTrue( list._list[0].id === 0 );
-  assert.isTrue( list._list[1].id === 1 );
-  console.log("testNoteListAssignsNoteID returned: " + list._list[0].assignNoteId() + list._list[1].assignNoteId() );
+  console.log("testNoteListAssignsNoteID returned " + list._list[0].id );
+
 };
 
 

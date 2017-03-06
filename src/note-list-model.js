@@ -11,15 +11,14 @@
   NoteList.prototype.createNote = function(text) {
     var note = new Note(text);
     this._list.push(note);
-    assignNoteId();
   }
 
   NoteList.prototype.assignNoteId = function() {
-    var assignID = this._list;
-    for ( var i = 0; i < assignID.length; i++ ) {
-      assignID[i].id = assignID.indexOf(assignID[i])
+    var array = this._list;
+    for ( var i = 0; i < array.length; i++ ) {
+      array[i].id = array.indexOf(array[i])
     }
-  }
+  };
 
   outputs.NoteList = NoteList;
 
