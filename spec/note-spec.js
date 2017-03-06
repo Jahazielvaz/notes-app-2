@@ -3,4 +3,5 @@ function testNoteCreation() {
   assert.isTrue( note.readNote() === "I'm a note!" )
   console.log( "TestNoteCreation returned: " + note.readNote() )
 };
+
 testNoteCreation();
