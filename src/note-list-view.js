@@ -13,6 +13,14 @@
     return convert + "</ul>"
   };
 
+  NoteListView.prototype.createLink = function() {
+    var array = this.noteList._list;
+    for ( var i = 0; i < array.length; i++ ) {
+      // assign an id assignNoteId() , than create a link with the note objec id `<a href=#notes/${array._list[i].id}>${array._list[i]._text}</a>`
+    }
+  };
+
+
   outputs.NoteListView = NoteListView;
 
 })(this);
