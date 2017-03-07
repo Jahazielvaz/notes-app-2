@@ -15,9 +15,8 @@ function testNoteListHasNote() {
 function testNoteListAssignsNoteID() {
   var list = new NoteList();
   list.createNote("First note!");
-  list.assignNoteId();
-  assert.isTrue( list._list[0].id === 0 );
-  console.log( "testNoteListAssignsNoteID returned: " + list._list[0].id );
+  assert.isTrue( list._list[0]._id === 0 );
+  console.log( "testNoteListAssignsNoteID returned: " + list._list[0]._id );
 };
 
 

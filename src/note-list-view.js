@@ -6,20 +6,19 @@
 
   NoteListView.prototype.convertToHTML = function() {
     var array = this.noteList._list;
-    var convert = "<ul>";
+    var html = "<ul>";
     for ( var i = 0; i < array.length; i++ ) {
-      convert += "<li><div>" + array[i]._text.substring(0, 20) + "</div></li>"
+      html += `<li><div><a href='#${ array[i]._id }'>${ array[i]._text.substring(0, 20) }</a></div></li>`;
     }
-    return convert + "</ul>"
+    return html + "</ul>"
   };
 
   NoteListView.prototype.createLink = function() {
-    this.noteList.assignNoteId();
     var array = this.noteList._list;
-    console.log(array);
     for ( var i = 0; i < array.length; i++ ) {
-      link = "<a href=#notes/" + array._list[i].id + ">" + array._list[i]._text + "</a>"
+      link = `<a href=‘#${array._list[i].id}’>${array._list[i]._text}</a>`
     }
+    return link;
   };
 
 
