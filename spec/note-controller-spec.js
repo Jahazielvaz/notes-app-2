@@ -11,7 +11,7 @@ function testAddsNotesToDOM() {
   var app = document.getElementById('app');
   controller.getHTML();
   console.log( "testAddsNotesToDOM returned " + app.innerHTML )
-  assert.isTrue( app.innerHTML === "<ul><li><div>test note 1</div></li></ul>" )
+  assert.isTrue( app.innerHTML === '<ul><li><div><a href="#0">test note 1</a></div></li></ul>' )
 };
 
 testNoteControllerCreation();
