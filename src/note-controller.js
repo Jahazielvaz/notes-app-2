@@ -10,6 +10,10 @@
     swap.innerHTML = this.view.convertToHTML();
   };
 
+  NoteController.prototype.displayNoteForURL = function() {
+
+  };
+
   outputs.NoteController = NoteController;
 
 })(this);
