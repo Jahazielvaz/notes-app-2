@@ -11,7 +11,20 @@
   };
 
   NoteController.prototype.displayNoteForURL = function() {
+    window.addEventListener("hashchange", this.displayCurrentNote() );
+    console.log(this.displayCurrentNote());
+  };
 
+  NoteController.prototype.displayCurrentNote = function() {
+    this.displayNote(this.getNoteFromURL(window.location));
+  };
+
+  NoteController.prototype.getNoteFromURL = function() {
+    return location.hash.split("#")[1];
+  }
+
+  NoteController.prototype.displayNote = function(note) {
+    document.getElementById("app").innerHTML = note;
   };
 
   outputs.NoteController = NoteController;

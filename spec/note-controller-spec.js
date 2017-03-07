@@ -20,7 +20,7 @@ function testFullNoteDisplayForURL() {
   var controller = new NoteController(list);
   var app = document.getElementById('app');
   controller.getHTML();
-  console.log( "testFullNoteDisplayForURL returned " + controller.displayNoteForURL );
+  console.log( "testFullNoteDisplayForURL returned " + controller.displayNoteForURL() );
   assert.isTrue( controller.displayNoteForURL() === "<div>This is a full test note with url mapped by note id viewable in full upon click</div>" );
 }
 
