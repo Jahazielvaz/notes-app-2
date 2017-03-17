@@ -10,27 +10,29 @@
     swap.innerHTML = this.view.convertToHTML();
   };
 
-  NoteController.prototype.displayNoteForURL = function() {
-    // will trigger to other functions to watch for click get mapped note to display
+  NoteController.prototype.makeURLChangeShowNoteInCurrentPage = function() {
+    window.addEventListener("hashchange", this.showNoteForCurrentPage.bind (this));// will trigger to other functions to watch for click get mapped note to display
   };
 
-  NoteController.prototype.displayCurrentNote = function() {
+  NoteController.prototype.showNoteForCurrentPage = function() {
+    this.findNote(this.getNoteFromURL(window.location)); // <- this gets the ID
     // triggers function that gets note id from url
-    this.displayNote(this.getNoteFromURL(window.location));
   };
 
   NoteController.prototype.getNoteFromURL = function() {
-    var noteID = location.hash.split("#")[1]; // this is fine gets the note id
-    return noteID;
+    return window.location.hash.split("#")[1]; // this is fine gets the note id
   };
 
-  NoteController.prototype.findNoteById = function(id) {
-    // should take the note id from url, match it to cooresponding id in notelist and return the text
+  NoteController.prototype.findNote = function(id) {
+    note = this.list._list[id];
+    singleNoteView = new SingleNoteView(note);
+    this.showNote(singleNoteView); // gets note and updates the innerhtml of the app div
   };
 
-  NoteController.prototype.displayNote = function(note) {
-    // gets note and updates the innerhtml of the app div
-    document.getElementById("app").innerHTML = note;
+  NoteController.prototype.showNote = function(note) {
+    document
+    .getElementById("app")
+    .innerHTML = note.convertNoteToHTML(); // singleNoteView method //note.viewNote();
   };
 
   outputs.NoteController = NoteController;
