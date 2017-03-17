@@ -7,10 +7,11 @@
 
   NoteController.prototype.preventSubmit = function() {
     document
-    .querySelector('#text')
+    .querySelector('#new-note')
     .addEventListener('click', function(event) {
 	       alert("Unable to submit this!");
 	       console.log(event);
+         console.log(event.srcElement.parentNode[0].value);
 	       event.preventDefault();
     }, false);
   };
