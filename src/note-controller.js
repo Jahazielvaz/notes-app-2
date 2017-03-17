@@ -5,6 +5,16 @@
     this.view = new NoteListView(this.list);
   };
 
+  NoteController.prototype.preventSubmit = function() {
+    document
+    .querySelector('#text')
+    .addEventListener('click', function(event) {
+	       alert("Unable to submit this!");
+	       console.log(event);
+	       event.preventDefault();
+    }, false);
+  };
+
   NoteController.prototype.getHTML = function() {
     var swap = document.getElementById("app");
     swap.innerHTML = this.view.convertToHTML();
